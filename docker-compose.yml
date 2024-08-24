@@ -6,8 +6,6 @@ services:
     build: app
     container_name: nginx-test-application
     restart: unless-stopped
-#    volumes:
-#    env_file:
     ports:
       - "8000:8000"
     command: /bin/sh -c "infra/runserver.sh"
@@ -15,13 +13,12 @@ services:
       - db
 
   db:
+    env_file:
+      - app/.env
     image: postgres
     restart: always
-    environment:
-      POSTGRES_DB: "NginxTest"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
     volumes:
-      - postgres_data:/var/Library/PostgreSQL/16/data/
+      - postgres_data:/var/Library/PostgreSQL/16/data
+
 volumes:
   postgres_data:
