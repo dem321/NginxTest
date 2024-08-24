@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "nginxtest"
+version = "0.1.0"
+description = ""
+authors = ["Dmitry <dab.work.en@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1"
+environs = "^11.0.0"
+djangorestframework = "^3.15.2"
+requests = "^2.32.3"
+django-filter = "^24.3"
+drf-yasg = "^1.21.7"
+setuptools = "^73.0.1"
+gunicorn = "^23.0.0"
+psycopg2-binary = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
